@@ -20,7 +20,7 @@ def print_data(s):
     sys.stdout.flush()
 
 
-def train(train_loader, test_loader, model, crit, epochs=200, ft_info=None, save_path='./save',
+def train(train_loader, valid_loader, model, crit, epochs=200, ft_info=None, save_path='./save',
           evaluate='p', optim=None, lr_schedule=None, early_stop=10, wp_iter=500):
     best_e = 0.0
     count = 0
@@ -71,7 +71,7 @@ def train(train_loader, test_loader, model, crit, epochs=200, ft_info=None, save
             TP = FP = TN = FN = 0
             scores_tensors = []
             labels_tensors = []
-            for i, data in enumerate(test_loader):
+            for i, data in enumerate(valid_loader):
                 x, x_cms, x_band, label, ab_label, y_info = data
                 if x.device != model.device:
                     x = x.to(model.device)
@@ -83,10 +83,6 @@ def train(train_loader, test_loader, model, crit, epochs=200, ft_info=None, save
                 out = model(x, x_cms, x_band)
                 # loss
                 loss = crit[0](out[0], label)
-                if model.struct:
-                    # classify structural abnormal type
-                    loss = loss + 0.3 * crit[1](out[1], ab_label)
-
                 test_loss.append(loss.item())
 
                 scores = torch.softmax(out[0], dim=-1)
