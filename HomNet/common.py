@@ -205,8 +205,8 @@ class HomoBlock(nn.Module):
         vec1 = cms_emb1 + pos
 
         for att_layer in self.attention_layers:
-            vec0, att0 = att_layer(vec0, vec1, self.mask)
-            vec1, att1 = att_layer(vec1, vec0, self.mask)
+            vec0, att0 = att_layer(vec0, vec1)
+            vec1, att1 = att_layer(vec1, vec0)
             if save_attn:
                 att_list0.append(att0)
                 att_list1.append(att1)
@@ -298,48 +298,4 @@ class CMSModel(nn.Module):
 
         emb = self.bag_block(home_embs)
         return self.cls_head(emb), emb, attn_list0, attn_list1
-
-
-class Model(nn.Module):
-    def __init__(self, device, name, cell_num=5, emb_dim=256, n_head=1, n_layer=2, drop_out=0,
-                 seq_size=32, vec_dim=64, frozen=0):
-        super(Model, self).__init__()
-        self.device = device
-        self.name = name
-        self.vec_dim = vec_dim
-        self.seq_size = seq_size
-        self.vec_n = 512 // seq_size
-
-        self.model = CMSModel(emb_dim, self.vec_dim, self.vec_n, self.seq_size,
-                              cell_num, n_head, n_layer, drop_out, device).to(device)
-        layer_count = 0
-        for p in self.parameters():
-            if layer_count > frozen:
-                break
-            layer_count += 1
-            p.requires_grad = False
-
-    def forward(self, xs, x_cms=None, x_band=None, save_attn=False):
-        out0, p_emb, attn_list0, attn_list1 = self.model(xs, x_cms, x_band, save_attn)
-
-        return out0, p_emb, attn_list0, attn_list1
-
-    def load_model(self, path='./model_dir/'):
-        checkpoint = torch.load(os.path.join(path, f'{self.name}.pth'), map_location=lambda storage, loc: storage)
-        self.model.load_state_dict(checkpoint['state_dict'])
-        self.model = self.model.to(self.device)
-
-    def load_ft_model(self, path='./model_dir/', ft_name=''):
-        checkpoint = torch.load(os.path.join(path, f'{self.name}{ft_name}.pth'),
-                                map_location=lambda storage, loc: storage)
-        self.model.load_state_dict(checkpoint['state_dict'])
-        self.model = self.model.to(self.device)
-
-    def save_model(self, path='./model_dir/'):
-        torch.save({'state_dict': self.model.state_dict()},
-                   os.path.join(path, f'{self.name}.pth'))
-
-    def save_ft_model(self, path='./model_dir/', ft_name=''):
-        torch.save({'state_dict': self.model.state_dict()},
-                   os.path.join(path, f'{self.name}{ft_name}.pth'))
 

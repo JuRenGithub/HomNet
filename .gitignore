@@ -7,3 +7,4 @@
 *.tar
 *.json
 ref/*
+save_dir/*
