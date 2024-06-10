@@ -1,0 +1,9 @@
+*.pt
+*.pth
+*.pyc
+*.csv
+*.npy
+*.pkl
+*.tar
+*.json
+ref/*
