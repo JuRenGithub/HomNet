@@ -1,13 +1,13 @@
 # HomNet: Chromosomal Structural Abnormality Diagnosis by Homologous Similarity
 
-[Juren Li](jrlee@zju.edu.cn)$^{1\bullet}$,
-[Fanzhe Fu](ffanz@zju.edu.cn)$^{1\bullet}$,
-[Ran Wei](ranwei@diagens.com)$^2$,
-[Yifei Sun](yifeisun@zju.edu.cn)$^1$,
-[Zeyu Lai](jerrylai@zju.edu.cn)$^1$,
-[Ning Song](ningsong@diagens.com)$^2$,
-[Xin Chen](xin.21@intl.zju.edu.cn)$^3$,
-[Yang Yang](yangya@zju.edu.cn)$^{1*}$. ($^\bullet$ Equal contribution; $^*$ Correspondence)
+[Juren Li](mailto:jrlee@zju.edu.cn)$^{1\bullet}$,
+[Fanzhe Fu](mailto:ffanz@zju.edu.cn)$^{1\bullet}$,
+[Ran Wei](mailto:ranwei@diagens.com)$^2$,
+[Yifei Sun](mailto:yifeisun@zju.edu.cn)$^1$,
+[Zeyu Lai](mailto:jerrylai@zju.edu.cn)$^1$,
+[Ning Song](mailto:ningsong@diagens.com)$^2$,
+[Xin Chen](mailto:xin.21@intl.zju.edu.cn)$^3$,
+[Yang Yang](mailto:yangya@zju.edu.cn)$^{1*}$. ($^\bullet$ Equal contribution; $^*$ Correspondence)
 
 $^1$ College of Computer Science and Technology, Zhejiang University
 
@@ -39,13 +39,13 @@ The dependencies can be installed by:
 
 ## Dataset
 We recommend using HomNet on real chromosome datasets. 
-Due to the sensitive nature of the chromosomal data, there are few openly available datasets containing chromosomal structural abnormalities. 
+Due to the sensitivity of the chromosomal data, there are few openly available datasets containing chromosomal structural abnormalities. 
 Here is a publicly available chromosome [dataset](https://ieeexplore.ieee.org/document/906069), however, it only consists of normal chromosomes.
 
 ## Run
-You can pretrain HomNet by ``pretrain.py`` and fine tune the pretrained model by ``fine_tune.py``.
+You can pretrain HomNet by ``pretrain.py`` and fine-tune the pretrained model by ``fine_tune.py``.
 
-Also we provide a demo for pretrain ``demo_notebook/pretrain.ipynb`` and a demo for fine tune ``demo_notebook/fine_tune.ipynb``, you can use randomly generated dataset to run the proposed HomNet.
+We also provide a demo for pretrain ``demo_notebook/pretrain.ipynb`` and a demo for fine-tune ``demo_notebook/fine_tune.ipynb``, you can use randomly generated dataset to run the proposed HomNet.
 
 **pretrain:**
 
@@ -74,7 +74,7 @@ python pretrain.py\
     --vec_dim 64
 ```
 
-**fine tune:**
+**fine-tune:**
 ```
 python fine_tune.py\
     --batch_size 512\
@@ -101,8 +101,8 @@ python fine_tune.py\
 ```
 ``--frozen`` should be reset according to the ``--n_layer``.
 
-## Concate
-If you have any question about the code or the paper, feel free to contact me through [email](jrlee@zju.edu.cn).
+## Contact
+If you have any question about the code or the paper, feel free to contact me through [email](mailto:jrlee@zju.edu.cn).
 
 ## Citation
 If you find HomNet useful in your research or application, please kindly cite:
