@@ -21,7 +21,8 @@ This repository provides the code of "Chromosomal Structural Abnormality Diagnos
 
 ## HomNet
 ![framework](./assets/framework.png)
-This work proposes a method for diagnosing chromosomal structural abnormalities by leveraging homologous similarity. By aligning homologous chromosomes and considering information from multiple pairs simultaneously.
+This work proposes a method, HomNet, for diagnosing chromosomal structural abnormalities by leveraging homologous similarity. 
+By aligning homologous chromosomes and considering information from multiple pairs simultaneously, HomNet can detect chromosomes with structural abnormalities.
 
 
 ## Requirements
