@@ -17,7 +17,7 @@ $^3$ Zhejiang University-University of Illinois Urbana-Champaign Institute
 
 ----
 
-This repository provides the code of "Chromosomal Structural Abnormality Diagnosis by Homologous Similarity", which is accepted by the **KDD'24** ADS track (20\% acceptance rate).
+This repository provides the code of "Chromosomal Structural Abnormality Diagnosis by Homologous Similarity", which is accepted by the [**KDD'24**](https://kdd2024.kdd.org/) ADS track (20\% acceptance rate).
 
 ## HomNet
 ![framework](./assets/framework.png)
