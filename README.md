@@ -38,15 +38,38 @@ The dependencies can be installed by:
 ``pip install -r requirements.txt ``
 
 
+## File Structure
+```
+.
+├── assets
+│   └── framework.png
+├── dataset
+│   ├── dataset_readme.md
+│   ├── data_utils.py
+│   ├── get_pretrain_dataset.py
+│   ├── get_real_dataset.py
+├── demo_notebook
+│   ├── fine_tune.ipynb
+│   └── pretrain.ipynb
+├── fine_tune.py
+├── HomNet
+│   ├── common.py
+│   ├── HomNet.py
+│   ├── trainer.py
+│   └── utils.py
+├── pretrain.py
+├── README.md
+└── requirements.txt
+```
+
 ## Dataset
 We recommend using HomNet on real chromosome datasets. 
 Due to the sensitivity of the chromosomal data, there are few openly available datasets containing chromosomal structural abnormalities. 
+
 Here is a publicly available chromosome [dataset](https://ieeexplore.ieee.org/document/906069), however, it only consists of normal chromosomes.
 
 ## Run
 You can pretrain HomNet by ``pretrain.py`` and fine-tune the pretrained model by ``fine_tune.py``.
-
-We also provide a demo for pretrain ``demo_notebook/pretrain.ipynb`` and a demo for fine-tune ``demo_notebook/fine_tune.ipynb``, you can use randomly generated dataset to run the proposed HomNet.
 
 **pretrain:**
 
@@ -102,8 +125,10 @@ python fine_tune.py\
 ```
 ``--frozen`` should be reset according to the ``--n_layer``.
 
+We also provide a demo for pretrain ``demo_notebook/pretrain.ipynb`` and a demo for fine-tune ``demo_notebook/fine_tune.ipynb``, you can use randomly generated dataset to run the proposed HomNet.
+
 ## Contact
-If you have any question about the code or the paper, feel free to contact me through [email](mailto:jrlee@zju.edu.cn).
+If you have any question about the code or the paper, feel free to contact me through Email: [jrlee@zju.edu.cn](mailto:jrlee@zju.edu.cn).
 
 ## Citation
 If you find HomNet useful in your research or application, please kindly cite:
