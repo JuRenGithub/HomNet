@@ -22,7 +22,7 @@ This repository provides the code of "Chromosomal Structural Abnormality Diagnos
 ## HomNet
 <!-- [![PaperPDF](https://img.shields.io/badge/Paper-PDF-red)](https://yangy.org/works/application/KDD24_Chromosome.pdf) -->
 [![PaperPDF](https://img.shields.io/badge/Paper-PDF-red)](https://arxiv.org/abs/2407.08204)
-[![VideoBilibili](https://img.shields.io/badge/Video-Bilibili-pink)](https://b23.tv/xvjDDE6)
+[![VideoBilibili](https://img.shields.io/badge/Video-Bilibili-pink)](https://www.bilibili.com/video/BV1JE421w7xq/?spm_id_from=333.999.0.0&vd_source=09cec99ad9b015a0bf557e4a4d8e06b9)
 [![VideoACM](https://img.shields.io/badge/Video-ACM-FF8C00)](https://files.atypon.com/acm/0a1fb334f4d07744950577ba288726af)
 
 ![framework](./assets/framework.png)
